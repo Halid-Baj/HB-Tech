@@ -48,7 +48,7 @@ li > a {
     text-decoration: none;
     color: #456882;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 li > a:hover {
@@ -67,18 +67,18 @@ nav > ul {
 
 h1 {
     color: #E3E3E3;
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 .hero-tagline {
     color: #E3E3E3;
-    font-size: 26px;
+    font-size: 1.625rem;
     max-width: 600px;
 }
 
 .hero-sub {
     color: #E3E3E3;
-    font-size: 25px;
+    font-size: 1.5625rem;
     max-width: 600px;
 }
 
@@ -88,7 +88,7 @@ h1 {
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 1.125rem;
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
@@ -131,29 +131,52 @@ h1 {
 /* About Section */
 
 .container {
-    max-width: 100%;
+    width: 100%;
+}
+
+/* main {
+    background-color: white;
+} */
+
+main section:nth-of-type(even) {
     background-color: #234C6A;
+}
+
+main section:nth-of-type(odd) {
+    background-color: #2d5979;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 40px;
     align-items: center;
-    padding-top: 30px;
+    padding-top: 10px;
+    border: 1px solid black;
+    
+    /* this is for adjusting the title position vertically */
+    
+    /* top: -40px;
+    /* position: relative; */
 }
+
+
 
 .about-content {
     display: flex;
     border: 1px solid black;
 }
 
+
+
+
 .about-text > p {
     color: #E3E3E3;
-    font-size: 23px;
+    font-size: 1.4375rem;
     line-height: 1.6;
     text-align: center;
     padding: 20px;
     padding-top: 60px;
+    width: 50%;
 }
 
 .container  img {
@@ -162,6 +185,18 @@ h1 {
     margin-right: 40px;
 }
 
+
+/* Add this to your CSS */
+.about-section,
+.services-section {
+    max-width: 1300px;           /* controls how wide the "card" gets */
+    margin: 4rem auto;           /* centers it + adds top/bottom space */
+    padding: 4rem 3rem;          /* inner spacing */
+    background: #E3E3E3;        /* or white, or #f8f9fa */
+    border-radius: 40px;         /* big rounded corners – adjust 30–60px */
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);  /* optional but looks pro */
+}
 
 
 #1B3C53
