@@ -114,6 +114,7 @@ h1 {
     background-size: cover;
     background-position: center;
     position: relative;
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .hero::before {                            /* ← ADD ALL OF THIS */
@@ -136,6 +137,10 @@ h1 {
     width: 100%;
 }
 
+section:not(#home) {
+    border: 2px solid #fff;
+}
+
 main section:nth-of-type(even) {
     background-color: #234C6A;
 }
@@ -150,7 +155,6 @@ main section:nth-of-type(odd) {
     margin-bottom: 40px;
     align-items: center;
     padding-top: 10px;
-    border: 1px solid black;
     font-size: 2.175rem;
     
     /* this is for adjusting the title position vertically */
@@ -163,7 +167,7 @@ main section:nth-of-type(odd) {
 
 .about-content {
     display: flex;
-    border: 1px solid black;
+    
 }
 
 
@@ -198,7 +202,13 @@ main section:nth-of-type(odd) {
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);  /* optional but looks pro */
 }
 
-
+hr {
+    border: none;
+    height: 2px;
+    background-color: #456882;
+    width: 150px;
+    margin: 10px auto 40px auto;
+}
 
 
 
@@ -256,6 +266,75 @@ main section:nth-of-type(odd) {
     background-color: #456882;
     color: #e3e3e3;
 }
+
+
+
+/* Contact Section */
+
+.contact-section {
+    max-width: 1300px;
+    margin: 4rem auto;
+    padding: 4rem 3rem;
+    background: #E3E3E3;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.contact-form {
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+    border: 1px solid black;
+}
+
+.form-container > h3 {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 1.5rem;
+
+}
+
+.form-container > form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.form-container {
+    width: 100%;
+    padding: 10px;
+}
+
+form > label {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 300;
+    color: #fff;
+}
+
+form > input {
+    width: 10;
+}
+
+.info-container {
+    width: 100%;
+    padding: 10px;
+}
+
+.info-container > h3 {
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.info-container > p {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 300;
+    color: #fff;
+}
+
 /* #1B3C53
 #234C6A
 #456882
