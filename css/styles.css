@@ -285,7 +285,6 @@ hr {
     display: flex;
     /* justify-content: space-between; */
     width: 100%;
-    border: 1px solid black;
 }
 
 .form-container > h3 {
@@ -311,10 +310,42 @@ form > label {
     margin-bottom: 8px;
     font-weight: 300;
     color: #fff;
+    font-size: 1.125rem;
 }
 
-form > input {
-    width: 10;
+form > input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c0bfbf;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.90rem;
+}
+
+form > input:focus {
+    outline: 2px solid #5E9ED6;
+}
+
+form > textarea:focus {
+    outline: 2px solid #5E9ED6;
+}
+
+form > button {
+    background-color: #1B3C53;
+    color: #E3E3E3;
+    padding: 10px;
+    width: 75%;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.125rem;
+}
+
+form > button:hover {
+    background-color: #456882;
+    color: #E3E3E3;
 }
 
 .info-container {
@@ -333,6 +364,26 @@ form > input {
     margin-bottom: 8px;
     font-weight: 300;
     color: #fff;
+}
+
+.info-container > p > a {
+    color: #ffffff;
+}
+
+.info-container > p > a:hover {
+    color: #E3E3E3;
+}
+
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #1b3c53;
+    color: #E3E3E3;
+    border-top: 4px solid white;
 }
 
 /* #1B3C53
