@@ -30,14 +30,14 @@ header {
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-    /* width: 100%; */
-    /* position: fixed;
+    border-bottom: 4px solid white;
+    position: fixed;
     top: 0;
     left: 0;    
     right: 0;
     background: #1b3c53;
-    z-index: 1000; */
-    border-bottom: 4px solid white;
+    z-index: 1000;
+    
 }
 
 nav > ul > li {
@@ -46,22 +46,40 @@ nav > ul > li {
 
 }
 
-li > a {
+nav a {
     text-decoration: none;
     color: #456882;
     font-weight: 500;
     font-size: 1.25rem;
 }
 
-li > a:hover {
+nav a:hover {
     color: #E3E3E3;
     text-decoration: underline;
     text-underline-offset: 0.5rem;
 }
 
 
-nav > ul {
+/* Changed */
+nav  ul {
     display: flex;
+    gap: 2rem;
+}
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 33px;
+    transition: 0.3s;
+    border-radius: 2px;
+    background: #E3E3E3;
 }
 
 
@@ -135,10 +153,18 @@ h1 {
 
 .container {
     width: 100%;
+
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 section:not(#home) {
     border: 2px solid #fff;
+}
+
+main {
+    margin-top: 100px;
 }
 
 main section:nth-of-type(even) {
@@ -167,26 +193,39 @@ main section:nth-of-type(odd) {
 
 .about-content {
     display: flex;
-    
+    flex-wrap: nowrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about {
+    flex: 1 1 400px;
+    text-align: left;
 }
 
 
-.about-text > p {
+
+.about-text p {
     color: #E3E3E3;
     font-size: 1.4375rem;
     line-height: 1.6;
-    text-align: center;
-    padding: 20px;
-    padding-top: 50px;
-    width: 50%;
+    text-align: left;
+    /* padding: 20px;
+    padding-top: 50px; */
+    padding: 20px 40px;
+    width: auto;
+    max-width: 100%;
 }
 
 
-.container  .about-us-image {
+.about-us-image {
+    flex: 1 1 400px;
+
     width: 400px;
+    max-width: 500px;
     height: auto;
     border-radius: 30px;
-    /* margin-right: 40px; */
 }
 
 
@@ -219,7 +258,9 @@ hr {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 50px;
+
+    gap: 30px;
 }
 
 .card {
@@ -229,11 +270,16 @@ hr {
     overflow: hidden;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px;
+
+    flex: 1 1 300px;
+    max-width: 400px;
 }
 
 .card img {
     width: 100%;
-    height: 220px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .card-content {
@@ -283,8 +329,17 @@ hr {
 
 .contact-form {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     width: 100%;
+    gap: 40px;
+
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+
+.form-container, .info-container {
+    flex: 1 1 400px;
 }
 
 .form-container > h3 {
@@ -385,6 +440,167 @@ footer {
     color: #E3E3E3;
     border-top: 4px solid white;
 }
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 45%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 90px;
+        left: 0;
+        right: 0;
+        background: #1b3c53;
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 0;
+        /* height: calc(100vh - 90px); */
+        overflow-y: auto;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: 999;
+        display: none;
+    }
+
+    nav ul.show {
+        transform: translateY(0);
+        display: flex;
+    }
+
+    /* nav ul.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1b3c53;
+        padding: 2rem 0;
+        transform: translateY(0);
+    } */
+    
+    nav a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.5rem;
+        color: #E3E3E3;
+    }
+
+    /* About */
+    .about-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .about-us-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .about-text p {
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Contact */
+    .contact-form {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .info-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    /* Cards / Service */
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0;
+    }
+
+    .about-section,
+    .services-section,
+    .contact-section {
+        margin: 2rem 0;           /* reduce top/bottom margin on tiny screens */
+        padding: 2rem 15px;       /* smaller inner padding */
+        border-radius: 20px;      /* slightly smaller radius on phone */
+    }
+
+    main {
+        margin-top: 80px;         /* adjust if header overlaps */
+    }
+}
+
+@media (max-width: 430px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;      /* prevents any horizontal overflow */
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px;         /* even smaller side padding */
+        margin: 0;
+    }
+
+    .about-section,
+    .services-section,
+    .contact-section {
+        margin: 2rem 0;
+        padding: 2rem 10px;      /* tighter inner padding */
+        border-radius: 20px;
+    }
+
+    main {
+        margin-top: 80px;        /* ensure no overlap with fixed header */
+    }
+
+    /* Force everything to full width */
+    section, .card-container, .about-content, .contact-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Color Palette Below */
 
 /* #1B3C53
 #234C6A
